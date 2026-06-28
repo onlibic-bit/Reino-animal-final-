@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📚 Apunte de Español — Guía Completa</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f5f0ff;
+    --card: #ffffff;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --gram-h: #6c3ef4;
+    --gram-l: #ede9ff;
+    --gram-b: #c4b5fd;
+    --sin-h: #0d7fad;
+    --sin-l: #e0f4fb;
+    --sin-b: #90d7f0;
+    --sem-h: #0e8a5e;
+    --sem-l: #d8f5ec;
+    --sem-b: #6ee7c0;
+    --ret-h: #c2410c;
+    --ret-l: #fff3e0;
+    --ret-b: #fdba74;
+    --tex-h: #a21caf;
+    --tex-l: #fce7ff;
+    --tex-b: #e879f9;
+    --lit-h: #b45309;
+    --lit-l: #fef3c7;
+    --lit-b: #fcd34d;
+    --eti-h: #15803d;
+    --eti-l: #dcfce7;
+    --eti-b: #86efac;
+    --radius: 14px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 16px;
+    font-size: 15px;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #6c3ef4, #a21caf, #c2410c);
+    color: white;
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 30px rgba(108,62,244,0.3);
+  }
+  .hero h1 { font-size: 2rem; font-weight: 900; letter-spacing: -0.5px; }
+  .hero p { opacity: 0.88; margin-top: 8px; font-size: 0.95rem; }
+
+  .search-wrap { margin-bottom: 20px; }
+  #search {
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 50px;
+    border: 2px solid var(--gram-b);
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    outline: none;
+    background: white;
+    transition: border-color .2s;
+  }
+  #search:focus { border-color: var(--gram-h); }
+
+  .nav-pills {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 24px;
+  }
+  .pill {
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all .15s;
+    text-decoration: none;
+  }
+  .pill:hover { filter: brightness(0.9); }
+</style>
+
+<style>
+  .section { margin-bottom: 20px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .sec-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    gap: 10px;
+  }
+  .sec-header .arrow { font-size: 1.2rem; transition: transform .25s; }
+  .sec-header.open .arrow { transform: rotate(180deg); }
+  .sec-body { padding: 20px; background: var(--card); display: none; }
+  .sec-body.open { display: block; }
+  .sub { border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
+  .sub-header {
+    padding: 10px 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.95rem;
+    user-select: none;
+  }
+  .sub-header .arr { transition: transform .2s; }
+  .sub-header.open .arr { transform: rotate(180deg); }
+  .sub-body { padding: 14px 16px; background: white; display: none; }
+  .sub-body.open { display: block; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin-top: 12px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .card { border-radius: 10px; padding: 14px; font-size: 14px; line-height: 1.55; }
+  .card strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+  .ex {
+    background: #f3f4f6;
+    border-left: 4px solid currentColor;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+    margin: 6px 0;
+    color: #374151;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 2px;
+  }
+  .tbl { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+  .tbl th { padding: 8px 10px; text-align: left; font-weight: 700; }
+  .tbl td { padding: 7px 10px; border-top: 1px solid #e5e7eb; }
+  .tbl tr:hover td { background: #f9fafb; }
+  ul.elist { list-style: none; padding: 0; margin-top: 8px; }
+  ul.elist li { padding: 4px 0; }
+  ul.elist li::before { content: attr(data-e) " "; }
+  p { margin-bottom: 8px; }
+  h4 { font-size: 0.9rem; font-weight: 800; margin: 12px 0 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .mt { margin-top: 12px; }
+  .note { font-size: 13px; color: var(--muted); font-style: italic; margin-top: 6px; }
+  mark { background: #fef08a; border-radius: 3px; padding: 0 2px; }
+  @media(max-width:500px){
+    .grid-2 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.5rem; }
+  }
+</style>
+
+<style>
+  .t-gram .sec-header { background: var(--gram-l); color: var(--gram-h); }
+  .t-gram .sub-header { background: var(--gram-l); color: var(--gram-h); }
+  .t-gram .sub-body { border-left: 3px solid var(--gram-b); }
+  .t-gram .card { background: var(--gram-l); color: var(--gram-h); }
+  .t-gram .badge { background: var(--gram-b); color: var(--gram-h); }
+  .t-gram .ex { border-color: var(--gram-h); }
+  .pill-gram { background: var(--gram-l); color: var(--gram-h); border-color: var(--gram-b); }
+  .t-sin .sec-header { background: var(--sin-l); color: var(--sin-h); }
+  .t-sin .sub-header { background: var(--sin-l); color: var(--sin-h); }
+  .t-sin .sub-body { border-left: 3px solid var(--sin-b); }
+  .t-sin .card { background: var(--sin-l); color: var(--sin-h); }
+  .t-sin .badge { background: var(--sin-b); color: var(--sin-h); }
+  .t-sin .ex { border-color: var(--sin-h); }
+  .pill-sin { background: var(--sin-l); color: var(--sin-h); border-color: var(--sin-b); }
+  .t-sem .sec-header { background: var(--sem-l); color: var(--sem-h); }
+  .t-sem .sub-header { background: var(--sem-l); color: var(--sem-h); }
+  .t-sem .sub-body { border-left: 3px solid var(--sem-b); }
+  .t-sem .card { background: var(--sem-l); color: var(--sem-h); }
+  .t-sem .badge { background: var(--sem-b); color: var(--sem-h); }
+  .t-sem .ex { border-color: var(--sem-h); }
+  .pill-sem { background: var(--sem-l); color: var(--sem-h); border-color: var(--sem-b); }
+  .t-ret .sec-header { background: var(--ret-l); color: var(--ret-h); }
+  .t-ret .sub-header { background: var(--ret-l); color: var(--ret-h); }
+  .t-ret .sub-body { border-left: 3px solid var(--ret-b); }
+  .t-ret .card { background: var(--ret-l); color: var(--ret-h); }
+  .t-ret .badge { background: var(--ret-b); color: var(--ret-h); }
+  .t-ret .ex { border-color: var(--ret-h); }
+  .pill-ret { background: var(--ret-l); color: var(--ret-h); border-color: var(--ret-b); }
+  .t-tex .sec-header { background: var(--tex-l); color: var(--tex-h); }
+  .t-tex .sub-header { background: var(--tex-l); color: var(--tex-h); }
+  .t-tex .sub-body { border-left: 3px solid var(--tex-b); }
+  .t-tex .card { background: var(--tex-l); color: var(--tex-h); }
+  .t-tex .badge { background: var(--tex-b); color: var(--tex-h); }
+  .t-tex .ex { border-color: var(--tex-h); }
+  .pill-tex { background: var(--tex-l); color: var(--tex-h); border-color: var(--tex-b); }
+  .t-lit .sec-header { background: var(--lit-l); color: var(--lit-h); }
+  .t-lit .sub-header { background: var(--lit-l); color: var(--lit-h); }
+  .t-lit .sub-body { border-left: 3px solid var(--lit-b); }
+  .t-lit .card { background: var(--lit-l); color: var(--lit-h); }
+  .t-lit .badge { background: var(--lit-b); color: var(--lit-h); }
+  .t-lit .ex { border-color: var(--lit-h); }
+  .pill-lit { background: var(--lit-l); color: var(--lit-h); border-color: var(--lit-b); }
+  .t-eti .sec-header { background: var(--eti-l); color: var(--eti-h); }
+  .t-eti .sub-header { background: var(--eti-l); color: var(--eti-h); }
+  .t-eti .sub-body { border-left: 3px solid var(--eti-b); }
+  .t-eti .card { background: var(--eti-l); color: var(--eti-h); }
+  .t-eti .badge { background: var(--eti-b); color: var(--eti-h); }
+  .t-eti .ex { border-color: var(--eti-h); }
+  .pill-eti { background: var(--eti-l); color: var(--eti-h); border-color: var(--eti-b); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>📚 Apunte de Español</h1>
+  <p>Guía completa · Gramática · Sintaxis · Retórica · Literatura · Etimologías</p>
+</div>
+
+<div class="search-wrap">
+  <input id="search" type="text" placeholder="🔍 Busca un concepto...">
+</div>
+
+<div class="nav-pills">
+  <a class="pill pill-gram" href="#gram">🟦 Gramática</a>
+  <a class="pill pill-sin" href="#sin">🔵 Sintaxis</a>
+  <a class="pill pill-sem" href="#sem">🟩 Semántica & Comunicación</a>
+  <a class="pill pill-ret" href="#ret">🟠 Figuras Retóricas</a>
+  <a class="pill pill-tex" href="#tex">🟣 Textos & Géneros</a>
+  <a class="pill pill-lit" href="#lit">🟡 Literatura</a>
+  <a class="pill pill-eti" href="#eti">🟢 Etimologías</a>
+</div>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- 🟦  GRAMÁTICA -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section t-gram" id="gram">
+  <div class="sec-header" onclick="toggle(this)">
+    <span>🟦 Gramática</span>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="sec-body open">
+
+    <!-- Fonología y sílaba -->
+    <div class="sub t-gram">
+      <div class="sub-header" onclick="toggleSub(this)">🔤 Fonología & Sílaba <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <div class="grid">
+          <div class="card t-gram"><strong>🔊 Sonido</strong>Ruido usado para la comunicación.</div>
+          <div class="card t-gram"><strong>🗣️ Fonema</strong>Sonido articulado que <em>distingue</em> palabras.</div>
+          <div class="card t-gram"><strong>✍️ Grafema</strong>Representación escrita del fonema.</div>
+          <div class="card t-gram"><strong>🔡 Dígrafo</strong>2 letras que producen 1 solo sonido. <span class="ex">ch, ll</span></div>
+        </div>
+        <h4>Sílaba</h4>
+        <p>División fonética mínima de una palabra. La <strong>sílaba tónica</strong> es la más fuerte (solo hay 1 por palabra, se cuenta de derecha a izquierda).</p>
+        <div class="grid">
+          <div class="card t-gram"><strong>🔗 Diptongo</strong>Vocal fuerte + débil <em>o</em> débil + débil juntas en una sílaba.<div class="ex">ai, ei, ia, ua, ui…</div></div>
+          <div class="card t-gram"><strong>✂️ Hiato</strong>Vocal fuerte + fuerte → se separan en sílabas distintas.<div class="ex">ma-es-tro, a-é-re-o</div></div>
+          <div class="card t-gram"><strong>🔗🔗 Triptongo</strong>Débil + fuerte + débil en una sola sílaba.<div class="ex">buey, cambiáis</div></div>
+        </div>
+        <h4>Vocales</h4>
+        <p><span class="badge t-gram">Fuertes: A, E, O</span> <span class="badge t-gram">Débiles: I, U</span></p>
+      </div>
+    </div>
+
+
+    <!-- Acentos -->
+    <div class="sub t-gram">
+      <div class="sub-header" onclick="toggleSub(this)">🎯 Acentuación <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <p>El <strong>acento</strong> es el mayor énfasis en la pronunciación. La sílaba que lo recibe = <strong>tónica</strong>; las demás = átonas.</p>
+        <div class="grid-2">
+          <div class="card t-gram"><strong>🎙️ Prosódico</strong>Solo se pronuncia, no se escribe.</div>
+          <div class="card t-gram"><strong>✏️ Ortográfico (tilde)</strong>Se escribe sobre la vocal tónica.</div>
+          <div class="card t-gram"><strong>❓ Diacrítico</strong>Distingue palabras de igual escritura.<div class="ex">más/mas · él/el · tú/tu · sí/si</div></div>
+          <div class="card t-gram"><strong>❗ Enfático</strong>Interrogativas y exclamativas.<div class="ex">qué · quién · cómo · cuándo</div></div>
+        </div>
+
+        <h4>Clasificación por posición de la tónica</h4>
+        <table class="tbl">
+          <tr><th>Tipo</th><th>Tónica en…</th><th>Regla de tilde</th><th>Ej.</th></tr>
+          <tr><td>🔴 Aguda / Oxítona</td><td>Última</td><td>Termina en N, S o vocal</td><td>avión, café</td></tr>
+          <tr><td>🟡 Grave / Paroxítona</td><td>Penúltima</td><td>NO termina en N, S o vocal</td><td>árbol, lápiz</td></tr>
+          <tr><td>🟢 Esdrújula / Proparoxítona</td><td>Antepenúltima</td><td>SIEMPRE llevan tilde</td><td>ejército, música</td></tr>
+          <tr><td>🔵 Sobreesdrújula</td><td>Antes de antepenúltima</td><td>SIEMPRE llevan tilde</td><td>dígaselo</td></tr>
+        </table>
+
+        <h4>Diacríticos importantes</h4>
+        <table class="tbl">
+          <tr><th>Sin tilde</th><th>Significado</th><th>Con tilde</th><th>Significado</th></tr>
+          <tr><td>mas</td><td>conjunción = pero</td><td>más</td><td>adverbio cantidad</td></tr>
+          <tr><td>si</td><td>condicional</td><td>sí</td><td>afirmación</td></tr>
+          <tr><td>se</td><td>pronombre relativo</td><td>sé</td><td>verbo ser/saber</td></tr>
+          <tr><td>de</td><td>preposición</td><td>dé</td><td>verbo dar</td></tr>
+          <tr><td>te</td><td>pronombre</td><td>té</td><td>infusión</td></tr>
+          <tr><td>el</td><td>artículo</td><td>él</td><td>pronombre personal</td></tr>
+          <tr><td>tu</td><td>adjetivo posesivo</td><td>tú</td><td>pronombre personal</td></tr>
+          <tr><td>mi</td><td>adjetivo posesivo</td><td>mí</td><td>pronombre personal</td></tr>
+          <tr><td>por qué</td><td>pregunta</td><td>—</td><td>—</td></tr>
+          <tr><td>porque</td><td>respuesta causal</td><td>—</td><td>—</td></tr>
+          <tr><td>por que</td><td>"por el cual"</td><td>—</td><td>—</td></tr>
+          <tr><td>porqué</td><td>sustantivo = motivo</td><td>—</td><td>—</td></tr>
+        </table>
+      </div>
+    </div>
+
+
+    <!-- Morfología -->
+    <div class="sub t-gram">
+      <div class="sub-header" onclick="toggleSub(this)">🔬 Morfología <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <p>Estudio de la <strong>estructura interna</strong> de las palabras: su formación y modificaciones gramaticales.</p>
+        <div class="grid">
+          <div class="card t-gram"><strong>🌱 Lexema</strong>Parte invariable que aporta el significado central.</div>
+          <div class="card t-gram"><strong>🔧 Morfema</strong>Parte variable con significado gramatical.</div>
+          <div class="card t-gram"><strong>⬅️ Prefijo</strong>Antes del lexema.<div class="ex">des-hacer</div></div>
+          <div class="card t-gram"><strong>➡️ Sufijo</strong>Después del lexema.<div class="ex">com-edor</div></div>
+          <div class="card t-gram"><strong>↔️ Interfijo</strong>Entre 2 lexemas.<div class="ex">pre-ce-ito</div></div>
+          <div class="card t-gram"><strong>🔄 Circunflejo</strong>Prefijo + sufijo al mismo tiempo.<div class="ex">en-trist-ecer</div></div>
+        </div>
+
+        <h4>Procesos de formación de palabras</h4>
+        <div class="grid">
+          <div class="card t-gram"><strong>📦 Derivación</strong>Añadir afijos a una base léxica. Cambia la categoría gramatical.<div class="ex">rojo → rojizo</div></div>
+          <div class="card t-gram"><strong>🔗 Composición</strong>Unir 2+ palabras con significado completo.<div class="ex">correcaminos, claroscuro</div></div>
+          <div class="card t-gram"><strong>🎛️ Parasíntesis</strong>Prefijo + sufijo al mismo tiempo, sin variante intermedia.<div class="ex">a-cartón-ado</div></div>
+        </div>
+
+        <h4>Afijos significativos</h4>
+        <div class="grid">
+          <div class="card t-gram"><strong>Aumentativos</strong><span class="badge t-gram">-ón/-ona</span><span class="badge t-gram">-azo</span><span class="badge t-gram">-ote</span><div class="ex">perr-azo, cas-ona</div></div>
+          <div class="card t-gram"><strong>Diminutivos</strong><span class="badge t-gram">-ito/-ita</span><span class="badge t-gram">-illo</span><span class="badge t-gram">-ico</span><div class="ex">cas-ita, árbol-illo</div></div>
+          <div class="card t-gram"><strong>Despectivos</strong><span class="badge t-gram">-uza</span><span class="badge t-gram">-aco</span><span class="badge t-gram">-zuelo</span><div class="ex">gent-uza, papel-ucho</div></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Sustantivo -->
+    <div class="sub t-gram">
+      <div class="sub-header" onclick="toggleSub(this)">🏷️ Sustantivo <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <p>Designa seres animados/inanimados. Nombra lo que tiene existencia física o imaginativa.</p>
+        <h4>Clasificaciones</h4>
+        <div class="grid">
+          <div class="card t-gram"><strong>Por esencia</strong><span class="badge t-gram">Concreto</span> árbol, libro<br><span class="badge t-gram">Abstracto</span> felicidad, paz</div>
+          <div class="card t-gram"><strong>Por extensión</strong><span class="badge t-gram">Individual</span> perro<br><span class="badge t-gram">Colectivo</span> rebaño, cardumen</div>
+          <div class="card t-gram"><strong>Por referencia</strong><span class="badge t-gram">Propio</span> Jorge, México<br><span class="badge t-gram">Común</span> perros, fruta</div>
+          <div class="card t-gram"><strong>Por formación</strong><span class="badge t-gram">Simple</span> sol<br><span class="badge t-gram">Compuesto</span> telaraña<br><span class="badge t-gram">Derivado</span> submarino<br><span class="badge t-gram">Parasintético</span> desplorado</div>
+        </div>
+        <h4>Accidentes gramaticales</h4>
+        <p>📌 Género (masc/fem) · Número (sing/pl) · Aumentativo, diminutivo, despectivo</p>
+        <p class="note">⚠️ Ojo: palabras como "el problema, el sistema" son masculinas aunque terminan en -a.</p>
+      </div>
+    </div>
+
+
+    <!-- Adjetivo -->
+    <div class="sub t-gram">
+      <div class="sub-header" onclick="toggleSub(this)">🎨 Adjetivo <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <p>Precisa o califica al sustantivo. Puede ser <strong>calificativo</strong> (da cualidades) o <strong>determinativo</strong> (limita o precisa).</p>
+        <p>📍 Si va <em>antes</em> del sustantivo = <strong>epíteto</strong>. La anteposición puede causar: mayor énfasis, cambio de significado o sentido irónico.</p>
+
+        <h4>🎯 Grados adjetivales</h4>
+        <div class="grid">
+          <div class="card t-gram"><strong>✅ Positivo</strong>Enuncia la cualidad.<div class="ex">nube blanca</div></div>
+          <div class="card t-gram"><strong>⚖️ Comparativo</strong>Igualdad: <em>tan…como</em><br>Superioridad: <em>más…que</em><br>Inferioridad: <em>menos…que</em></div>
+          <div class="card t-gram"><strong>🏆 Superlativo</strong>Máximo grado. Desinencia: <strong>-ísimo</strong><div class="ex">alt-ísimo, grand-ísimo</div>
+          <span class="badge t-gram">-ble → -bilísimo</span> amable→amabilísimo<br>
+          <span class="badge t-gram">-bre → -érrimo</span> libre→libérrimo</div>
+        </div>
+
+        <h4>Superlativos irregulares (del latín)</h4>
+        <table class="tbl">
+          <tr><th>Positivo</th><th>Comparativo</th><th>Superlativo</th></tr>
+          <tr><td>bueno</td><td>mejor</td><td>óptimo</td></tr>
+          <tr><td>malo</td><td>peor</td><td>pésimo</td></tr>
+          <tr><td>grande</td><td>mayor</td><td>máximo</td></tr>
+          <tr><td>pequeño</td><td>menor</td><td>mínimo</td></tr>
+        </table>
+
+        <h4>Apócope</h4>
+        <p>Suprimir sonidos al final del adjetivo cuando va antes del sustantivo.</p>
+        <table class="tbl">
+          <tr><th>Completa</th><th>Apocopada</th></tr>
+          <tr><td>alguno</td><td>algún</td></tr>
+          <tr><td>bueno</td><td>buen</td></tr>
+          <tr><td>ciento</td><td>cien</td></tr>
+          <tr><td>cualquiera</td><td>cualquier</td></tr>
+          <tr><td>grande</td><td>gran</td></tr>
+        </table>
+
+        <h4>Adjetivos determinativos</h4>
+        <div class="grid">
+          <div class="card t-gram"><strong>📍 Demostrativos</strong>este/esta/esto, ese/esa/eso, aquel/aquella/aquello</div>
+          <div class="card t-gram"><strong>🏠 Posesivos</strong>mío/mi, tuyo/tu, suyo/su, nuestro, vuestro</div>
+          <div class="card t-gram"><strong>🔢 Numerales</strong>cardinales, ordinales, múltiplos, partitivos</div>
+          <div class="card t-gram"><strong>🌫️ Indefinidos</strong>otro, cierto, tanto, alguno, ninguno, varios…</div>
+          <div class="card t-gram"><strong>❓ Enfáticos</strong>cuál, qué, cuánto, dónde → en preguntas/exclamaciones, SIEMPRE con acento</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Pronombre -->
+    <div class="sub t-gram">
+      <div class="sub-header" onclick="toggleSub(this)">👤 Pronombre <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <p>Sustituye a un sustantivo o evita su repetición.</p>
+        <div class="grid">
+          <div class="card t-gram"><strong>👥 Personales</strong>
+            <em>1ª:</em> yo, me, nos, nosotros<br>
+            <em>2ª:</em> tú, te, usted, ustedes<br>
+            <em>3ª:</em> él, ella, ello, lo, la, ellos, las
+          </div>
+          <div class="card t-gram"><strong>👈 Demostrativos</strong>este, ese, aquel (junto al verbo = pronombre; junto al sust. = adjetivo)</div>
+          <div class="card t-gram"><strong>🔑 Posesivos</strong>mío, tuyo, suyo, nuestro, cuyo…</div>
+          <div class="card t-gram"><strong>🔗 Relativos</strong>que, quien, cual, cuanto (se refieren a algo mencionado antes)</div>
+          <div class="card t-gram"><strong>❓ Enfáticos</strong>qué, quién, cuál, cuáles → en interrogativas/exclamativas, con tilde</div>
+          <div class="card t-gram"><strong>🌫️ Indefinidos</strong>alguien, nadie, algo, nada, cualquiera, varios, bastantes, uno…</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Artículo -->
+    <div class="sub t-gram">
+      <div class="sub-header" onclick="toggleSub(this)">📰 Artículo <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <p>Antecede al sustantivo y concuerda en género y número.</p>
+        <div class="grid-2">
+          <div class="card t-gram"><strong>✅ Determinados/Definidos</strong>(algo conocido)<br>
+            el / la / lo<br>los / las<br>
+            <span class="badge t-gram">del = de + el</span><span class="badge t-gram">al = a + el</span>
+          </div>
+          <div class="card t-gram"><strong>❓ Indeterminados/Indefinidos</strong>(algo desconocido)<br>
+            un / una<br>unos / unas
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Verbo -->
+    <div class="sub t-gram">
+      <div class="sub-header" onclick="toggleSub(this)">⚡ Verbo <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <p>Expresa acciones, actitudes, movimientos. Siempre refiere a lo que realizan/padecen personas o cosas.</p>
+
+        <h4>Accidentes gramaticales</h4>
+        <div class="grid">
+          <div class="card t-gram"><strong>👤 Persona y número</strong>1ª, 2ª, 3ª · singular o plural</div>
+          <div class="card t-gram"><strong>🕰️ Tiempo</strong>Presente, Pasado/Pretérito, Futuro</div>
+          <div class="card t-gram"><strong>🎭 Modo</strong><span class="badge t-gram">Indicativo</span> hechos reales (10 tiempos)<br><span class="badge t-gram">Subjuntivo</span> deseo/duda (6 tiempos)<br><span class="badge t-gram">Imperativo</span> mandato (1 tiempo)</div>
+          <div class="card t-gram"><strong>🔊 Voz</strong>Activa (sujeto = agente) / Pasiva (sujeto = paciente)</div>
+        </div>
+
+        <h4>Modo Indicativo — tiempos simples</h4>
+        <table class="tbl">
+          <tr><th>RAE</th><th>Andrés Bello</th><th>Ej. (amar)</th></tr>
+          <tr><td>Presente</td><td>Presente</td><td>amo</td></tr>
+          <tr><td>Pretérito perfecto simple</td><td>Pretérito</td><td>amé</td></tr>
+          <tr><td>Futuro simple</td><td>Futuro</td><td>amaré</td></tr>
+          <tr><td>Pretérito imperfecto</td><td>Copreterito</td><td>amaba</td></tr>
+          <tr><td>Condicional simple</td><td>Pospretérito</td><td>amaría</td></tr>
+        </table>
+        <h4>Modo Indicativo — tiempos compuestos</h4>
+        <table class="tbl">
+          <tr><th>RAE</th><th>Andrés Bello</th><th>Ej.</th></tr>
+          <tr><td>Pretérito perfecto compuesto</td><td>Antepresente</td><td>he amado</td></tr>
+          <tr><td>Pretérito anterior</td><td>Antepreterito</td><td>hube amado</td></tr>
+          <tr><td>Futuro compuesto</td><td>Antefuturo</td><td>habré amado</td></tr>
+          <tr><td>Pretérito pluscuamperfecto</td><td>Antecopreterito</td><td>había amado</td></tr>
+          <tr><td>Condicional compuesto</td><td>Antepospretérito</td><td>habría amado</td></tr>
+        </table>
+
+
+        <h4>Modo Subjuntivo — tiempos simples</h4>
+        <table class="tbl">
+          <tr><th>RAE</th><th>Andrés Bello</th><th>Ej.</th></tr>
+          <tr><td>Presente</td><td>Presente</td><td>ame</td></tr>
+          <tr><td>Pretérito imperfecto</td><td>Pretérito</td><td>amara/amase</td></tr>
+          <tr><td>Futuro</td><td>Futuro</td><td>amare</td></tr>
+          <tr><td>Pret. perfecto compuesto</td><td>Antepresente</td><td>haya amado</td></tr>
+          <tr><td>Pluscuamperfecto</td><td>Antepreterito</td><td>hubiera amado</td></tr>
+          <tr><td>Futuro compuesto</td><td>Antefuturo</td><td>hubiere amado</td></tr>
+        </table>
+
+        <h4>Usos de los tiempos</h4>
+        <div class="grid">
+          <div class="card t-gram"><strong>Presente</strong>Acción simultánea · habitual · histórico · universal · con matiz futuro</div>
+          <div class="card t-gram"><strong>Pretérito</strong>Acciones concluidas en el pasado.</div>
+          <div class="card t-gram"><strong>Copreterito</strong>Acción simultánea a otra en el pasado o habitual en el pasado.<div class="ex">leía esa novela cuando sonó el teléfono</div></div>
+          <div class="card t-gram"><strong>Pospretérito</strong>Futuro respecto a acción pasada; posibilidad condicionada; cortesía.<div class="ex">Entenderías mejor si estuvieras atento</div></div>
+          <div class="card t-gram"><strong>Antepresente</strong>Acciones recientes con vigencia en el presente.<div class="ex">Han subido los precios</div></div>
+          <div class="card t-gram"><strong>Antecopreterito</strong>Acción anterior a otra también pasada.<div class="ex">Tú ya habías nacido cuando comenzó la era digital</div></div>
+        </div>
+
+
+        <h4>Verboides — Formas no personales</h4>
+        <div class="grid">
+          <div class="card t-gram"><strong>📋 Infinitivo</strong>-ar, -er, -ir. Acción en abstracto. Admite pronombres enclíticos.<div class="ex">cambiarse · beberme</div></div>
+          <div class="card t-gram"><strong>🔄 Gerundio</strong>-ando, -iendo. Acción en progreso/simultánea.<div class="ex">cambiándome · bebiéndones</div></div>
+          <div class="card t-gram"><strong>✅ Participio</strong>-ado, -ido, -to, -so, -cho. Se usa como adjetivo.<div class="ex">freído/frito · escrito · dicho</div></div>
+        </div>
+
+        <h4>Perífrasis verbal</h4>
+        <p>Suma de formas verbales que expresan una idea condensada. = <strong>verbo auxiliar + verboide</strong>.</p>
+        <p>Auxiliares: <span class="badge t-gram">haber</span><span class="badge t-gram">ser</span><span class="badge t-gram">estar</span> + ir, venir, andar, tener, acabar, romper…</p>
+        <div class="ex">estuve pensando = pensé · llego a pensar = pensé · voy corriendo = corro</div>
+
+        <h4>Clasificación de verbos</h4>
+        <div class="grid">
+          <div class="card t-gram"><strong>Regular</strong>Sin variaciones en su raíz al conjugarse.</div>
+          <div class="card t-gram"><strong>Irregular</strong>Alteraciones en raíz o terminación.<div class="ex">soy-seré-sido; voy-vas-iba</div></div>
+          <div class="card t-gram"><strong>Defectivo</strong>Solo se conjugan en algunas formas.<div class="ex">atañer, acontecer, abolir</div></div>
+          <div class="card t-gram"><strong>Impersonal/Unipersonal</strong>Solo 3ª persona singular; fenómenos meteorológicos.<div class="ex">llover, nevar, amanecer</div></div>
+          <div class="card t-gram"><strong>Transitivo</strong>Tiene complemento directo.<div class="ex">René construyó un barco</div></div>
+          <div class="card t-gram"><strong>Intransitivo</strong>Sin complemento directo.<div class="ex">Tatiana nada muy bien</div></div>
+          <div class="card t-gram"><strong>Copulativo</strong>Ser y estar; unen sujeto y predicado.<div class="ex">La fiesta fue divertida</div></div>
+          <div class="card t-gram"><strong>Reflexivo</strong>Acción recae sobre el sujeto (me, te, se, nos).<div class="ex">Él se admira a sí mismo</div></div>
+          <div class="card t-gram"><strong>Recíproco</strong>Dos sujetos intercambian la acción.<div class="ex">Madre e hija se besaron</div></div>
+          <div class="card t-gram"><strong>Auxiliar</strong>Forman perífrasis, pierden significado propio.<div class="ex">Anda diciendo que busca venganza</div></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Adverbio -->
+    <div class="sub t-gram">
+      <div class="sub-header" onclick="toggleSub(this)">🔍 Adverbio <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <p>Palabra invariable que modifica o intensifica lo expresado por: 1) verbo, 2) adjetivo o 3) otro adverbio.</p>
+        <div class="grid">
+          <div class="card t-gram"><strong>Modo</strong>rápidamente, bien, mal</div>
+          <div class="card t-gram"><strong>Lugar</strong>ahí, aquí, allá, cerca</div>
+          <div class="card t-gram"><strong>Duda</strong>quizá, acaso, tal vez</div>
+          <div class="card t-gram"><strong>Tiempo</strong>antes, después, ya, aún</div>
+          <div class="card t-gram"><strong>Afirmación</strong>sí, también, claro</div>
+          <div class="card t-gram"><strong>Cantidad</strong>mucho, poco, bastante</div>
+          <div class="card t-gram"><strong>Negación</strong>no, nunca, jamás</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preposición y Conjunción -->
+    <div class="sub t-gram">
+      <div class="sub-header" onclick="toggleSub(this)">🔗 Preposición & Conjunción <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <h4>Preposiciones simples</h4>
+        <p>a · ante · bajo · cabe · con · contra · de · desde · en · entre · hacia · hasta · para · por · según · sin · sobre · tras</p>
+
+        <h4>Conjunciones coordinantes</h4>
+        <table class="tbl">
+          <tr><th>Tipo</th><th>Palabras</th><th>Ej.</th></tr>
+          <tr><td>Copulativas</td><td>y, e, ni</td><td>Salieron y regresaron tarde</td></tr>
+          <tr><td>Disyuntivas</td><td>o, u</td><td>Entran o salen</td></tr>
+          <tr><td>Adversativas</td><td>pero, mas, sino</td><td>Iba a ir, pero tuve un problema</td></tr>
+          <tr><td>Distributivas</td><td>bien…bien, ya…ya</td><td>Ya sentía calor, ya sentía frío</td></tr>
+          <tr><td>Consecutivas</td><td>luego, así, pues</td><td>Pienso, luego existo</td></tr>
+        </table>
+
+        <h4>Conjunciones subordinantes</h4>
+        <table class="tbl">
+          <tr><th>Tipo</th><th>Palabras</th></tr>
+          <tr><td>Causales</td><td>porque, pues, ya que</td></tr>
+          <tr><td>Consecutivas</td><td>con que, de tal modo que</td></tr>
+          <tr><td>Finales</td><td>para que, a fin de que</td></tr>
+          <tr><td>Condicionales</td><td>si, siempre que</td></tr>
+          <tr><td>Concesivas</td><td>aunque, si bien, a pesar de que</td></tr>
+          <tr><td>Comparativas</td><td>así como, como, igual que</td></tr>
+        </table>
+      </div>
+    </div>
+
+
+    <!-- Interjección -->
+    <div class="sub t-gram">
+      <div class="sub-header" onclick="toggleSub(this)">😲 Interjección <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <p>Palabras invariables que equivalen a una oración. Se usan exclusivamente en oraciones exclamativas.</p>
+        <p><strong>Propias:</strong> <span class="badge t-gram">¡Ay!</span><span class="badge t-gram">¡Huy!</span><span class="badge t-gram">¡Ah!</span><span class="badge t-gram">¡Oh!</span><span class="badge t-gram">¡Ojalá!</span><span class="badge t-gram">¡Hurra!</span><span class="badge t-gram">¡Ea!</span></p>
+        <p><strong>Impropias:</strong> <span class="badge t-gram">¡Fuego!</span><span class="badge t-gram">¡Bravo!</span><span class="badge t-gram">¡Socorro!</span><span class="badge t-gram">¡Ánimo!</span><span class="badge t-gram">¡Vaya!</span><span class="badge t-gram">¡Salud!</span></p>
+      </div>
+    </div>
+
+    <!-- Signos de puntuación -->
+    <div class="sub t-gram">
+      <div class="sub-header" onclick="toggleSub(this)">✏️ Signos de Puntuación <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <table class="tbl">
+          <tr><th>Signo</th><th>Uso principal</th><th>Ej.</th></tr>
+          <tr><td>. Punto</td><td>Cerrar oración / separar párrafos / abreviaciones</td><td>Fin.</td></tr>
+          <tr><td>; Punto y coma</td><td>Enumeraciones complejas / antes de adversativas / conclusión o causa</td><td>Llegó Luis; ella también</td></tr>
+          <tr><td>: Dos puntos</td><td>Antes de cita / anunciar resumen / saludos en carta</td><td>Como dijo Sócrates: …</td></tr>
+          <tr><td>… Puntos suspensivos</td><td>Suspenso / expresiones inconclusas / enumeraciones incompletas / duda</td><td>No sé, no creo…</td></tr>
+          <tr><td>" " Comillas</td><td>Ironía / títulos / sobrenombres / palabras extranjeras / diálogos</td><td>"El Perico"</td></tr>
+          <tr><td>( ) Paréntesis</td><td>Información incidental / explicaciones / referencia de cita</td><td>(Picasso, 1920)</td></tr>
+          <tr><td>[ ] Corchetes</td><td>Evitar repetir paréntesis / aclaraciones en citas</td><td>"Fue así que [los romanos] …"</td></tr>
+          <tr><td>— Raya</td><td>Indicar diálogos / separar cláusulas o aclaraciones</td><td>—Sal de ahí —dijo ella—</td></tr>
+          <tr><td>- Guión</td><td>Dividir palabras al final del renglón / separar silábica / conceptos compuestos</td><td>teórico-práctico</td></tr>
+        </table>
+
+        <h4>Tipos de coma</h4>
+        <table class="tbl">
+          <tr><th>Tipo</th><th>Uso</th></tr>
+          <tr><td>Enumerativa</td><td>Lista de elementos similares</td></tr>
+          <tr><td>Conjuntiva</td><td>Separa conectores discursivos</td></tr>
+          <tr><td>Elíptica</td><td>Evita repetición de un verbo</td></tr>
+          <tr><td>Adversativa</td><td>Antes de pero, mas, sino, aunque</td></tr>
+          <tr><td>Vocativo</td><td>Explícita a quien se habla</td></tr>
+          <tr><td>Apositiva</td><td>Duplica el sujeto en la oración</td></tr>
+          <tr><td>Explicativa</td><td>Añade información/aclaración</td></tr>
+          <tr><td>Hiperbática</td><td>Alteración del orden sintáctico normal</td></tr>
+        </table>
+        <p class="note">⛔ NO se usa coma: entre sujeto y predicado · antes de y, o · después de pero.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- 🔵  SINTAXIS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section t-sin" id="sin">
+  <div class="sec-header" onclick="toggle(this)">
+    <span>🔵 Sintaxis</span>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="sec-body">
+
+    <div class="sub t-sin">
+      <div class="sub-header" onclick="toggleSub(this)">🧩 Sintagmas <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <p>Constituyentes formados por un <strong>núcleo</strong> + determinantes, modificadores y complementos.</p>
+        <div class="grid">
+          <div class="card t-sin"><strong>🏷️ Nominal (SN)</strong>Núcleo = nombre. Puede tener determinantes.<div class="ex">Un pájaro amarillo</div></div>
+          <div class="card t-sin"><strong>🎨 Adjetival (SAdj)</strong>Núcleo = adjetivo + modificador (adverbio).<div class="ex">Bastante solidario</div></div>
+          <div class="card t-sin"><strong>🔍 Adverbial (SAdv)</strong>Núcleo = adverbio, modificado por otro adverbio.<div class="ex">Muy cerca · Tan inesperadamente</div></div>
+          <div class="card t-sin"><strong>🔗 Preposicional (SPrep)</strong>Núcleo = preposición + SN (complemento).<div class="ex">Por su culpa · En la orilla del río</div></div>
+          <div class="card t-sin"><strong>⚡ Verbal (SV)</strong>Núcleo = verbo. Siempre = predicado de la oración.<div class="ex">Rompió la taza · Cantamos toda la noche</div></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-sin">
+      <div class="sub-header" onclick="toggleSub(this)">🏗️ Elementos de la oración <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <p><strong>Frase:</strong> sin verbo, sin sentido completo. <em>La bicicleta verde de mi padre.</em></p>
+        <p><strong>Oración:</strong> con verbo, sentido completo, sujeto + predicado. <em>Las avestruces corren.</em></p>
+
+        <h4>Sujeto</h4>
+        <p>¿Quién realiza la acción? Puede estar al principio, en medio o al final. Puede ser pronombre, sustantivo u oración.</p>
+        <div class="grid">
+          <div class="card t-sin"><strong>Expreso/Explícito</strong>Se nombra.<div class="ex">Juan lee un libro</div></div>
+          <div class="card t-sin"><strong>Tácito/Implícito</strong>Deducido de la conjugación.<div class="ex">Leía un libro (yo)</div></div>
+          <div class="card t-sin"><strong>Indeterminado</strong>No se sabe quién es.<div class="ex">Robaron la tienda</div></div>
+          <div class="card t-sin"><strong>Paciente</strong>Recibe la acción (voz pasiva).<div class="ex">Los detenidos son trasladados</div></div>
+          <div class="card t-sin"><strong>Agente</strong>Realiza la acción en voz pasiva.<div class="ex">Los policías detienen a los ladrones</div></div>
+          <div class="card t-sin"><strong>Compuesto</strong>Más de un núcleo.<div class="ex">Marta y Luis aprobaron</div></div>
+        </div>
+
+        <h4>Predicado</h4>
+        <p>Expresa la acción o estado del sujeto. Formado por verbo + complementos.</p>
+        <div class="grid-2">
+          <div class="card t-sin"><strong>Nominal</strong>Verbos copulativos (ser/estar).<div class="ex">Él es doctor</div></div>
+          <div class="card t-sin"><strong>Verbal</strong>Verbo con significado pleno.<div class="ex">Ocurrió un milagro</div></div>
+        </div>
+
+        <h4>Complementos</h4>
+        <div class="grid">
+          <div class="card t-sin"><strong>🎯 Objeto Directo (OD)</strong>Recibe directamente la acción. Pregunta: ¿Qué? → Sustituible por lo/la/los/las.<div class="ex">El perro se comió la pierna → se la comió</div></div>
+          <div class="card t-sin"><strong>📬 Objeto Indirecto (OI)</strong>Beneficiario/perjudicado. Pregunta: ¿A quién? / ¿Para quién? Con prep. a/para. Sustituible por le/les.<div class="ex">Carmela pidió las copias a Rocío → le pidió</div></div>
+          <div class="card t-sin"><strong>🌍 Complemento Circunstancial (CC)</strong>Modo (¿cómo?), Tiempo (¿cuándo?), Lugar (¿dónde?), Cantidad, Instrumento, Compañía, Tema, Causa, Finalidad.</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-sin">
+      <div class="sub-header" onclick="toggleSub(this)">📋 Clasificación de oraciones <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <div class="grid-2">
+          <div class="card t-sin"><strong>Simple</strong>Un solo verbo (simple o perifrástico).<div class="ex">El acusado quiere un jurado imparcial</div></div>
+          <div class="card t-sin"><strong>Compuesta</strong>Dos o más verbos.<div class="ex">Cuando oímos los ruidos, se nos cortó la respiración</div></div>
+        </div>
+
+        <h4>Por la actitud del hablante</h4>
+        <div class="grid">
+          <div class="card t-sin"><strong>📣 Enunciativas</strong>Afirman o niegan. Declarativas/asertivas.<div class="ex">Está fatigada de mirar el paisaje</div></div>
+          <div class="card t-sin"><strong>❓ Interrogativas</strong>Expresan pregunta desconocida por el hablante.<div class="ex">¿Cómo puede irritarte algo tan simple?</div></div>
+          <div class="card t-sin"><strong>😲 Exclamativas</strong>Emoción: sorpresa, alegría, miedo.<div class="ex">¡Qué hermosa mañana!</div></div>
+          <div class="card t-sin"><strong>👊 Imperativas</strong>Orden, petición o mandato. También: exhortativas.<div class="ex">No fumes en este lugar</div></div>
+          <div class="card t-sin"><strong>🌠 Desiderativas</strong>Deseo de que algo ocurra. Verbo en subjuntivo.<div class="ex">Ojalá sople el viento</div></div>
+          <div class="card t-sin"><strong>🤔 Dubitativas</strong>Expresan duda.<div class="ex">Habrían sido las ocho cuando supe que no volvería</div></div>
+        </div>
+
+        <h4>Por el tipo de verbo</h4>
+        <div class="grid">
+          <div class="card t-sin"><strong>Copulativas</strong>ser/estar<div class="ex">La fiesta fue divertida</div></div>
+          <div class="card t-sin"><strong>Transitivas</strong>Con OD<div class="ex">Rosina bebe agua de frutas</div></div>
+          <div class="card t-sin"><strong>Intransitivas</strong>Sin OD<div class="ex">María estornudó tres veces</div></div>
+          <div class="card t-sin"><strong>Reflexivas</strong>Acción recae en el sujeto<div class="ex">Él se admira a sí mismo</div></div>
+          <div class="card t-sin"><strong>Recíprocas</strong>Dos sujetos intercambian acción<div class="ex">Felipe y Vicente se gritaron injurias</div></div>
+          <div class="card t-sin"><strong>Pasivas</strong>Sujeto paciente<div class="ex">Una dieta baja en grasa ha sido recomendada</div></div>
+          <div class="card t-sin"><strong>Impersonales</strong>Sin sujeto determinado<div class="ex">La semana pasada granizó</div></div>
+        </div>
+
+
+        <h4>Oraciones compuestas coordinadas</h4>
+        <div class="grid">
+          <div class="card t-sin"><strong>Copulativas</strong>Suma/adición. y, e, ni<div class="ex">Mi padre preparó la cena y todos se lo agradecimos</div></div>
+          <div class="card t-sin"><strong>Adversativas</strong>Contrariedad. pero, sino<div class="ex">Escribió un libro, pero nadie se lo quiere publicar</div></div>
+          <div class="card t-sin"><strong>Disyuntivas</strong>Alternativa/dilema. o<div class="ex">Te comes la ensalada o no te daré postre</div></div>
+          <div class="card t-sin"><strong>Distributivas</strong>Dos acciones alternativas. ya…ya, bien…bien<div class="ex">Ya sentía calor, ya sentía frío</div></div>
+        </div>
+
+        <h4>Oraciones subordinadas</h4>
+        <p>Integradas dentro de otra oración; no tienen independencia sintáctica ni semántica.</p>
+        <div class="grid">
+          <div class="card t-sin"><strong>Sustantivas</strong>Cumplen función de sujeto, OD, OI, predicado o complemento de preposición.<div class="ex">Quien se acercó primero era un impostor (sujeto)</div></div>
+          <div class="card t-sin"><strong>Adjetivas/Relativas</strong><span class="badge t-sin">Explicativas</span>Añaden info no esencial (entre comas)<br><span class="badge t-sin">Determinativas</span>Delimitan al antecedente</div>
+          <div class="card t-sin"><strong>Adverbiales</strong>Locativas · Temporales · Modales · Comparativas · Consecutivas · Causales · Condicionales</div>
+        </div>
+
+        <h4>Yuxtapuestas</h4>
+        <p>Sin nexos; unidas por puntuación.</p>
+        <div class="ex">Ven conmigo, te enseñaré la biblioteca.</div>
+      </div>
+    </div>
+
+    <div class="sub t-sin">
+      <div class="sub-header" onclick="toggleSub(this)">🔄 Voz activa y pasiva <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <div class="grid-2">
+          <div class="card t-sin"><strong>✅ Activa</strong>Sujeto = agente (realiza la acción).<div class="ex">Gabriel entregó el departamento</div></div>
+          <div class="card t-sin"><strong>🔄 Pasiva</strong>Sujeto = paciente (recibe la acción).<div class="ex">El departamento fue entregado por Gabriel</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- 🟩  SEMÁNTICA & COMUNICACIÓN -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section t-sem" id="sem">
+  <div class="sec-header" onclick="toggle(this)">
+    <span>🟩 Semántica & Comunicación</span>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="sec-body">
+
+    <div class="sub t-sem">
+      <div class="sub-header" onclick="toggleSub(this)">📡 Circuito del habla <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <p>Proceso comunicativo = emisión de señales con intención de dar a conocer un mensaje.</p>
+        <div class="grid">
+          <div class="card t-sem"><strong>🗣️ Emisor/Enunciador</strong>Inicia el intercambio; transmite el mensaje.</div>
+          <div class="card t-sem"><strong>📨 Mensaje</strong>La información transmitida. Lo que se dice.</div>
+          <div class="card t-sem"><strong>👂 Receptor/Enunciatario</strong>Quien recibe el mensaje.</div>
+          <div class="card t-sem"><strong>📻 Canal</strong>Conducto físico por el cual se transmite el mensaje.</div>
+          <div class="card t-sem"><strong>📶 Ruido</strong>Interferencia que afecta al canal.</div>
+          <div class="card t-sem"><strong>🌍 Contexto</strong>Circunstancias en las que se produce el mensaje.</div>
+          <div class="card t-sem"><strong>🔑 Código</strong>Sistema de signos compartido por emisor y receptor.</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-sem">
+      <div class="sub-header" onclick="toggleSub(this)">🎭 Funciones del lenguaje <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <table class="tbl">
+          <tr><th>Función</th><th>Centrada en…</th><th>Intención</th><th>Ej.</th></tr>
+          <tr><td>😊 Emotiva/Expresiva</td><td>Emisor</td><td>Expresar sentimientos, emociones</td><td>"Tengo mucho frío"</td></tr>
+          <tr><td>📰 Representativa/Referencial</td><td>Contexto</td><td>Informar con objetividad</td><td>Noticias, textos informativos</td></tr>
+          <tr><td>📢 Conativa/Apelativa</td><td>Receptor</td><td>Influir, convencer, ordenar</td><td>"Juan, ve a la tienda"</td></tr>
+          <tr><td>🎨 Poética/Estética</td><td>Mensaje</td><td>Efecto estético, goce</td><td>Poesía, canciones, cuentos</td></tr>
+          <tr><td>📞 Fática/De contacto</td><td>Canal</td><td>Verificar que el canal funciona</td><td>"¿Me estás escuchando?"</td></tr>
+          <tr><td>📖 Metalingüística</td><td>Código</td><td>Hablar sobre la propia lengua</td><td>"¿Qué significa bipolaridad?"</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="sub t-sem">
+      <div class="sub-header" onclick="toggleSub(this)">💡 Denotación vs. Connotación <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <div class="grid-2">
+          <div class="card t-sem"><strong>📖 Denotación</strong>Significado objetivo, literal, universal. Lo del diccionario.<div class="ex">Rosa = flor</div></div>
+          <div class="card t-sem"><strong>💬 Connotación</strong>Significado subjetivo, figurado, contextual.<div class="ex">Rosa = amor, delicadeza</div></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-sem">
+      <div class="sub-header" onclick="toggleSub(this)">🔗 Relaciones semánticas <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <div class="grid">
+          <div class="card t-sem"><strong>🔤 Parónimos</strong>Palabras parecidas en forma.<div class="ex">abeja - oveja</div></div>
+          <div class="card t-sem"><strong>✏️ Homógrafos</strong>Se escriben igual, diferente significado.<div class="ex">botas (calzado) - botas (pelota)</div></div>
+          <div class="card t-sem"><strong>🔊 Homófonos</strong>Suenan igual, diferente escritura.<div class="ex">casa - caza</div></div>
+          <div class="card t-sem"><strong>1️⃣ Monosemia</strong>Una sola palabra, un solo significado.</div>
+          <div class="card t-sem"><strong>🔢 Polisemia</strong>Una sola palabra, varios significados.</div>
+          <div class="card t-sem"><strong>🌳 Hiperónimo</strong>Engloba a otras en su sentido.<div class="ex">Insectos → mariposa, abeja</div></div>
+          <div class="card t-sem"><strong>🦋 Hipónimo</strong>Especie de otra categoría más grande.<div class="ex">mariposa ⊂ insecto</div></div>
+          <div class="card t-sem"><strong>🏛️ Epónimo</strong>Nombre de personaje usado para denominar lugares, conceptos.<div class="ex">Malinche → Malinchismo</div></div>
+          <div class="card t-sem"><strong>🔡 Anagrama</strong>Cambio en el orden de las letras.<div class="ex">arles → resal</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub t-sem">
+      <div class="sub-header" onclick="toggleSub(this)">⚠️ Vicios del lenguaje <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <table class="tbl">
+          <tr><th>Vicio</th><th>Definición</th><th>Ej.</th></tr>
+          <tr><td>Extranjerismo</td><td>Uso innecesario de término extranjero</td><td>Me gusta el footing</td></tr>
+          <tr><td>Pleonasmo</td><td>Repetición/redundancia del mismo significado</td><td>Lo vi con mis propios ojos</td></tr>
+          <tr><td>Metátesis</td><td>Cambio de lugar de sílaba dentro de una palabra</td><td>Polvadera → polvadera</td></tr>
+          <tr><td>Impropiedad léxica</td><td>Uso de palabras con significado incorrecto</td><td>Polvadera (por polvorienta)</td></tr>
+          <tr><td>Barbarismo</td><td>Pronunciación/escritura incorrecta de una palabra</td><td>Haiga (por haya)</td></tr>
+          <tr><td>Solecismo</td><td>Error en sintaxis/concordancia gramatical</td><td>Busco silla para dar de comer a bebé de madera</td></tr>
+          <tr><td>Dequeísmo</td><td>Uso incorrecto de "de que"</td><td>Le dije de que viniera</td></tr>
+          <tr><td>Queísmo</td><td>Omisión incorrecta de "de"</td><td>Estoy seguro que viene</td></tr>
+          <tr><td>Anfibología</td><td>Ambigüedad de interpretación gramatical</td><td>El perro de mi hermana es pesimo</td></tr>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="sub t-sem">
+      <div class="sub-header" onclick="toggleSub(this)">📝 Propiedades del texto <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <div class="grid">
+          <div class="card t-sem"><strong>✅ Adecuación</strong>Cumplimiento de normas del texto. Adecuado al receptor, al tema y a la situación comunicativa.</div>
+          <div class="card t-sem"><strong>🔗 Cohesión</strong>Dependencia gramatical entre unidades del texto. Uso de nexos, párrafos bien estructurados.</div>
+          <div class="card t-sem"><strong>💡 Coherencia</strong>Información pertinente con orden, calidad y estructura lógica.</div>
+          <div class="card t-sem"><strong>🎯 Cabalidad</strong>Mensajes expresados con claridad.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- 🟠  FIGURAS RETÓRICAS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section t-ret" id="ret">
+  <div class="sec-header" onclick="toggle(this)">
+    <span>🟠 Figuras Retóricas</span>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="sec-body">
+
+    <div class="sub t-ret">
+      <div class="sub-header" onclick="toggleSub(this)">🎵 Elementos del verso <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <div class="grid">
+          <div class="card t-ret"><strong>📏 Verso</strong>Grupo de palabras sujeto a medida, ritmo y rima.</div>
+          <div class="card t-ret"><strong>🎼 Estrofa</strong>Conjunto de versos de número y medida fijos.</div>
+          <div class="card t-ret"><strong>🔔 Rima</strong>Fonemas que se repiten desde la última vocal acentuada.<br><span class="badge t-ret">Consonante</span> coinciden consonantes y vocales<br><span class="badge t-ret">Asonante</span> solo coinciden vocales</div>
+          <div class="card t-ret"><strong>🎶 Ritmo</strong>Distribución regular de sílabas acentuadas.</div>
+          <div class="card t-ret"><strong>📐 Métrica</strong>Medida de los versos. Agudas +1 sílaba · Esdrújulas -1 sílaba</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-ret">
+      <div class="sub-header" onclick="toggleSub(this)">🎭 Figuras de dicción <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <div class="grid">
+          <div class="card t-ret"><strong>🔁 Aliteración</strong>Repetición de sonidos en palabras contiguas.<div class="ex">Tres tristes tigres comían trigo en un trigal</div></div>
+          <div class="card t-ret"><strong>📢 Anáfora / Reiteración</strong>Repetición al inicio de frases consecutivas.<div class="ex">¡Oh noche que guiaste! / ¡Oh noche amable!</div></div>
+          <div class="card t-ret"><strong>🔚 Epífora / Epístrofe</strong>Repetición al final de versos o frases.<div class="ex">Arriba estaba el sol / El trigo era amarillo como el sol</div></div>
+          <div class="card t-ret"><strong>🔗 Anadiplosis</strong>Última palabra de un verso = primera del siguiente.<div class="ex">"La vida es sueño, / sueño es la vida"</div></div>
+          <div class="card t-ret"><strong>✂️ Asíndeton</strong>Omisión de nexos o conjunciones.<div class="ex">Desmayarse, atreverse, estar furioso, áspero, tierno…</div></div>
+          <div class="card t-ret"><strong>🔗🔗 Polisíndeton</strong>Repetición de nexos coordinantes.<div class="ex">…y mal herido y el ejército deshecho y todo…</div></div>
+          <div class="card t-ret"><strong>🔤 Paranomasia</strong>Expresiones de fonemas análogos.<div class="ex">El erizo se irisa, se eriza de risa</div></div>
+          <div class="card t-ret"><strong>↩️ Quiasmo / Retruécano</strong>Repetición cruzada y simétrica que invierte el significado.<div class="ex">Ni son todos los que están, ni están todos los que son</div></div>
+          <div class="card t-ret"><strong>🎭 Hiato</strong>Pronunciación separada de dos vocales juntas. Rompe un diptongo.<div class="ex">A/é-re/o</div></div>
+          <div class="card t-ret"><strong>↩️ Encabalgamiento</strong>Idea iniciada en un verso y terminada en el siguiente.</div>
+          <div class="card t-ret"><strong>💬 Reiteración</strong>La oración se duplica con ligero cambio.<div class="ex">¡Te dije que no fueras, te lo dije!</div></div>
+          <div class="card t-ret"><strong>📈 Gradación</strong>Conceptos ordenados de menor a mayor (clímax) o mayor a menor (anticlímax).</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-ret">
+      <div class="sub-header" onclick="toggleSub(this)">💡 Figuras de pensamiento <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <div class="grid">
+          <div class="card t-ret"><strong>🦋 Metáfora</strong>Semejanza entre significados de palabras no vinculadas habitualmente.<div class="ex">Tus cabellos de oro · Empieza el llanto de la guitarra</div></div>
+          <div class="card t-ret"><strong>🌉 Alegoría</strong>Sucesión de metáforas que juntas evocan una idea compleja.<div class="ex">"Compre baraquilla (alma) mía entre peñascos (aprietos) rota…"</div></div>
+          <div class="card t-ret"><strong>⚖️ Comparación / Símil</strong>Relación explícita entre dos objetos con un término comparativo.<div class="ex">…porque se cae su cuerpo como la fruta madura</div></div>
+          <div class="card t-ret"><strong>🔄 Metonimia</strong>Un término sustituye a otro por relación de existencia (causa, espacial, temporal).<div class="ex">Eres mi alegría (= causa de mi alegría)</div></div>
+          <div class="card t-ret"><strong>🌀 Sinécdoque</strong>Un todo por sus partes o viceversa.<div class="ex">Chocaron los aceros (= espadas)</div></div>
+          <div class="card t-ret"><strong>🌊 Hipérbole</strong>Exageración para subrayar o intensificar.<div class="ex">Tengo tanta hambre que me podría morir</div></div>
+          <div class="card t-ret"><strong>😏 Ironía</strong>Oponer una idea declarando su contraria (el tono revela lo real).<div class="ex">Y vi algunos poblando sus calvos con cabellos</div></div>
+          <div class="card t-ret"><strong>❓ Paradoja / Antilogía</strong>Aproxima dos ideas opuestas con coherencia profunda.<div class="ex">Muero porque no muero</div></div>
+          <div class="card t-ret"><strong>⚔️ Antítesis</strong>Oponer dos ideas con palabras antónimas o contrarias.<div class="ex">Un pequeño paso para un hombre, un gran paso para la humanidad</div></div>
+          <div class="card t-ret"><strong>❄️ Oxímoron</strong>Dos palabras contiguas que se excluyen lógicamente. Paradoja + antítesis.<div class="ex">En poco mar de luz ve oscuras ruinas</div></div>
+          <div class="card t-ret"><strong>🌟 Personificación/Prosopopeya</strong>Atribuir cualidades humanas a seres no humanos.<div class="ex">La naturaleza es sabia</div></div>
+          <div class="card t-ret"><strong>🌈 Sinestesia</strong>Mezclar sensaciones de distintos sentidos.<div class="ex">Suave como un silbido de verano (tacto + audición)</div></div>
+          <div class="card t-ret"><strong>🔊 Onomatopeya</strong>Sonido imita la acción o el objeto.<div class="ex">Tic tac · aullido</div></div>
+
+          <div class="card t-ret"><strong>🔀 Hipérbaton</strong>Altera el orden gramatical de los elementos del discurso.<div class="ex">Dulces daban al alma melodías</div></div>
+          <div class="card t-ret"><strong>📍 Epíteto</strong>Adjetivo que destaca una cualidad inherente del sustantivo.<div class="ex">La blanca nieve · la verde hierba</div></div>
+          <div class="card t-ret"><strong>📌 Epítome</strong>Repetición de las primeras expresiones de un párrafo extenso.<div class="ex">El otro día llevole convidado a comer…</div></div>
+          <div class="card t-ret"><strong>🖼️ Imagen</strong>Identificar o evocar un término real con otro figurado usando los sentidos.<div class="ex">Cuando se toca con las manos él vacío, el hueco</div></div>
+          <div class="card t-ret"><strong>🔇 Lítote</strong>Afirmar algo negando lo contrario.<div class="ex">Disculpa pero creo que no estás en lo cierto</div></div>
+          <div class="card t-ret"><strong>💬 Perífrasis</strong>Frase para decir lo que podría expresarse con una sola palabra.<div class="ex">"La ciudad de los palacios" (México)</div></div>
+          <div class="card t-ret"><strong>🎭 Etopeya</strong>Descripción de rasgos internos de una persona.<div class="ex">Era el cardenal Cisneros, varón de espíritu resuelto…</div></div>
+          <div class="card t-ret"><strong>🖼️ Prosopografía</strong>Descripción de rasgos físicos.<div class="ex">Era un señor flaco, bajito, escuálido, melenas grises</div></div>
+          <div class="card t-ret"><strong>🪞 Retrato</strong>Descripción física + psicológica.<div class="ex">Ella es alta, bonita (externo) y buena (interno)</div></div>
+          <div class="card t-ret"><strong>🧮 Eufemismo</strong>Sustituir expresión dura por otra suave.<div class="ex">Falleció (por murió)</div></div>
+          <div class="card t-ret"><strong>🏛️ Épónimo</strong>Personaje que da nombre a un lugar, tribu, época.<div class="ex">Louis Braille → braille</div></div>
+          <div class="card t-ret"><strong>📖 Pleonasmo</strong>Redundancia que añade énfasis.<div class="ex">Lo vi con mis propios ojos</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- 🟣  TEXTOS Y GÉNEROS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section t-tex" id="tex">
+  <div class="sec-header" onclick="toggle(this)">
+    <span>🟣 Textos & Géneros Literarios</span>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="sec-body">
+
+    <div class="sub t-tex">
+      <div class="sub-header" onclick="toggleSub(this)">📂 Clasificación de textos <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <div class="grid">
+          <div class="card t-tex"><strong>🔒 Personales</strong>Carácter privado. Escolares (apuntes, bitácora), Familiares (anécdota, carta), Históricos (diario, autobiografía)</div>
+          <div class="card t-tex"><strong>📣 Persuasivos</strong>Convencer al lector. Anuncio publicitario, caricatura política, artículo de opinión.</div>
+          <div class="card t-tex"><strong>🎭 Recreativos</strong>Expresar emociones. Literarios (narrativo, poético, dramático) · Didácticos (chiste, refrán)</div>
+          <div class="card t-tex"><strong>📰 Expositivos</strong>Informar. Históricos (monografía), Periodísticos (noticia, crónica), Escolares (ensayo)</div>
+          <div class="card t-tex"><strong>📋 Funcionales</strong>Escolares (resumen, mapa conceptual), Personales (CV, carta formal), Laborales (oficio, solicitud)</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-tex">
+      <div class="sub-header" onclick="toggleSub(this)">📖 Género Narrativo <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <p>Estructura lineal organizada en párrafos. La persona que relata los hechos es el <strong>narrador</strong>.</p>
+
+        <h4>Personajes</h4>
+        <p><span class="badge t-tex">🦸 Protagonista</span> Gira toda la trama.<br>
+        <span class="badge t-tex">🦹 Antagonista</span> Oponente del protagonista.<br>
+        <span class="badge t-tex">👥 Secundarios</span> Importancia en episodios concretos.<br>
+        <span class="badge t-tex">🌿 Incidente/Ambiental</span> Presencia casual o por escena.</p>
+
+        <h4>Subgéneros narrativos</h4>
+        <div class="grid">
+          <div class="card t-tex"><strong>📝 Cuento</strong>Narración breve. Un solo tema, pocos personajes, una sola problemática.</div>
+          <div class="card t-tex"><strong>📚 Novela</strong>Narración extensa por capítulos. Trama compleja y abundante.</div>
+          <div class="card t-tex"><strong>🦊 Fábula</strong>Enseñanza moral con animales humanizados como protagonistas. Padre: Esopo.</div>
+          <div class="card t-tex"><strong>🙏 Parábola</strong>Relato con acertijo del que se deduce una verdad fundamental. Frecuente en textos bíblicos.</div>
+          <div class="card t-tex"><strong>⚔️ Epopeya</strong>Forma narrativa más antigua. Relatos heroicos y mitológicos. El foco es un guerrero héroe.</div>
+          <div class="card t-tex"><strong>⚡ Mito</strong>Explica origen de divinidades y fenómenos naturales.</div>
+          <div class="card t-tex"><strong>🌟 Leyenda</strong>De tradición oral, con dosis de verdad histórica. Personajes extraordinarios.</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-tex">
+      <div class="sub-header" onclick="toggleSub(this)">🎵 Género Poético / Lírico <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <p>El poeta expresa su intimidad. Género <strong>subjetivo</strong>. Características: estrofas y verso, rima, métrica, ritmo, sujeto lírico.</p>
+        <div class="grid">
+          <div class="card t-tex"><strong>🎵 Canción</strong>Poema admirativo de emoción y tema amoroso. 5/7 estrofas = estanzas.</div>
+          <div class="card t-tex"><strong>🏛️ Himno</strong>Exaltar a un gran hombre o celebrar una victoria. Expresa júbilo.</div>
+          <div class="card t-tex"><strong>🎭 Oda</strong>Arte mayor (8-13 sílabas). Estilo superior y entusiasta. Alejandrinos (14 sílabas).</div>
+          <div class="card t-tex"><strong>💕 Madrigal</strong>Intenso y delicado. Tónica amorosa idílica. 7-11 sílabas por estrofa. Breve.</div>
+          <div class="card t-tex"><strong>😢 Elegía</strong>Dolor por una desgracia, pérdida o desvío amoroso.</div>
+          <div class="card t-tex"><strong>📜 Soneto</strong>14 versos endecasílabos: 2 cuartetos + 2 tercetos. Rima consonante.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub t-tex">
+      <div class="sub-header" onclick="toggleSub(this)">🎭 Género Dramático <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <p>Obras para representarse ante público. Género <strong>mixto</strong> (objetivo y subjetivo). Pueden estar en verso o prosa.</p>
+        <div class="grid">
+          <div class="card t-tex"><strong>😭 Tragedia</strong>Desgracias humanas o divinas. Muerte del protagonista = cúspide y cierre.</div>
+          <div class="card t-tex"><strong>😂 Comedia</strong>Exageración de defectos humanos. Confrontación en lo ridículo o absurdo para causar gracia.</div>
+          <div class="card t-tex"><strong>😂😭 Tragicomedia</strong>Mezcla trágico y cómico. También: pieza o género psicológico.</div>
+          <div class="card t-tex"><strong>💔 Drama</strong>Aspectos conflictivos de la vida humana: pérdidas, abandono, miedo.</div>
+          <div class="card t-tex"><strong>⛪ Autosacramental</strong>Pieza de teatro religioso.</div>
+          <div class="card t-tex"><strong>🤡 Farsa</strong>Personajes fantasiosos, grotescos, ridiculizados en situaciones carnavalescas.</div>
+          <div class="card t-tex"><strong>💕 Melodrama</strong>Situaciones amorosas o sentimentales en personajes comunes.</div>
+          <div class="card t-tex"><strong>🎪 Entremés</strong>Recreativo, breve, expone costumbres de una época. Un solo acto.</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-tex">
+      <div class="sub-header" onclick="toggleSub(this)">📝 Modalidades & Propiedades textuales <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <div class="grid">
+          <div class="card t-tex"><strong>🖼️ Descripción</strong>Dibujar con palabras un trozo de la realidad. Pintura hecha con palabras.</div>
+          <div class="card t-tex"><strong>📖 Narración</strong>Contar historias. Sucesos en orden cronológico (puede alterarse con fines estéticos).</div>
+          <div class="card t-tex"><strong>📰 Exposición</strong>Principal objetivo: informar. Presenta una cuestión para que otros la conozcan y comprendan.</div>
+          <div class="card t-tex"><strong>💬 Argumentación</strong>Dar razones para sustentar o atacar una opinión. Combinada con la exposición.</div>
+          <div class="card t-tex"><strong>📣 Persuasión</strong>Argumentación + apelación a los sentimientos del receptor.</div>
+          <div class="card t-tex"><strong>🗣️ Diálogo</strong>Intercambio de información entre 2 personas.</div>
+        </div>
+
+        <h4>Elementos externos e internos del libro</h4>
+        <div class="grid">
+          <div class="card t-tex"><strong>Externos:</strong> sobrecubierta, solapa, cubierta (portada), lomo, ceja, contraportada</div>
+          <div class="card t-tex"><strong>Internos:</strong> dedicatoria, presentación, índice, prólogo/introducción, capítulos, colofón, epílogo</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- 🟡  LITERATURA -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section t-lit" id="lit">
+  <div class="sec-header" onclick="toggle(this)">
+    <span>🟡 Literatura — Movimientos & Autores</span>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="sec-body">
+
+    <div class="sub t-lit">
+      <div class="sub-header" onclick="toggleSub(this)">🌸 Modernismo (1888) <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <p>Inicio: <strong>Azul</strong> de Rubén Darío. Influencias: simbolismo y parnasianismo francés.</p>
+        <div class="grid">
+          <div class="card t-lit"><strong>Características</strong>Renovación estética · Preciosismo y refinamiento · Cosmopolitismo · Individualismo · Exotismo · El cisne como símbolo · Arte por el arte</div>
+          <div class="card t-lit"><strong>Recursos</strong>Símbolo y metáfora · Musicalidad · Sinestesia · Elegancia formal (métrica) · Lo bello / lo plástico</div>
+        </div>
+        <h4>Autores clave</h4>
+        <table class="tbl">
+          <tr><th>Autor</th><th>País</th><th>Obras</th></tr>
+          <tr><td>Rubén Darío</td><td>Nicaragua</td><td>Azul, Rimas, Prosas profanas</td></tr>
+          <tr><td>Leopoldo Lugones</td><td>Argentina</td><td>Las fuerzas extrañas</td></tr>
+          <tr><td>José Martí</td><td>Cuba</td><td>Nuestra América</td></tr>
+          <tr><td>Amado Nervo</td><td>México</td><td>La amada inmóvil, El donador de almas</td></tr>
+          <tr><td>Manuel Gutiérrez Nájera</td><td>México</td><td>La duquesa Job</td></tr>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="sub t-lit">
+      <div class="sub-header" onclick="toggleSub(this)">🎨 Vanguardismo (s. XX) <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <p>Avant-garde · Innovación · Ruptura de temas y formas convencionales del arte. Escuelas = "ismos" con manifiesto.</p>
+        <div class="grid">
+          <div class="card t-lit"><strong>⚙️ Futurismo</strong>Filippo Marinetti (1909). Exaltación de la máquina, tecnología, velocidad.</div>
+          <div class="card t-lit"><strong>📦 Cubismo</strong>Guillaume Apollinaire (1913), Picasso. Perspectiva fragmentada. Caligramas.</div>
+          <div class="card t-lit"><strong>🎲 Dadaísmo</strong>Tristán Tzara (1916). Pérdida del sentido, antilogico, antiartístico.</div>
+          <div class="card t-lit"><strong>🌍 Creacionismo</strong>Vicente Huidobro (Chile, 1917). El poeta crea mundos con la palabra. Metáfora y descontextualización.</div>
+          <div class="card t-lit"><strong>😴 Surrealismo</strong>André Breton (1924). Procesos oníricos sin control racional. Escritura libre, automatismo. Dalí, Remedios Varo.</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-lit">
+      <div class="sub-header" onclick="toggleSub(this)">✨ Realismo Mágico & Literatura Contemporánea <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <p><strong>Realismo mágico</strong> = Realidad (real) + elementos mágicos/extraordinarios + creencias culturales/populares.</p>
+
+        <h4>Características contemporáneas</h4>
+        <ul class="elist">
+          <li data-e="🧠">Narración introspectiva</li>
+          <li data-e="⏳">Narración no lineal</li>
+          <li data-e="🎭">Narrador poco fiable / perspectivismo</li>
+          <li data-e="🎶">Polifonía (atender todas las voces)</li>
+          <li data-e="💥">Ruptura espacio-tiempo</li>
+        </ul>
+
+        <h4>Obras clave</h4>
+        <div class="grid">
+          <div class="card t-lit"><strong>Cien años de soledad</strong> — García Márquez<br>100 años de linaje de la familia Buendía · Macondo · Incesto como inicio</div>
+          <div class="card t-lit"><strong>Pedro Páramo</strong> — Juan Rulfo<br>Comala (ciudad) · Todos son hijos de Pedro Páramo · Habla con muertos</div>
+          <div class="card t-lit"><strong>Rayuela</strong> — Julio Cortázar<br>1) principio→fin lineal · 2) tablero · narrador muerto</div>
+        </div>
+
+
+        <h4>Autores y obras — tabla completa</h4>
+        <table class="tbl">
+          <tr><th>Autor</th><th>Obra</th></tr>
+          <tr><td>William Shakespeare</td><td>Hamlet, Romeo y Julieta</td></tr>
+          <tr><td>Homero</td><td>La Ilíada / La Odisea</td></tr>
+          <tr><td>Rubén Darío</td><td>Azul</td></tr>
+          <tr><td>Elena Garo</td><td>Los recuerdos del porvenir</td></tr>
+          <tr><td>Julio Cortázar</td><td>Rayuela</td></tr>
+          <tr><td>Oscar Wilde</td><td>El retrato de Dorian Grey</td></tr>
+          <tr><td>Juan Rulfo</td><td>Pedro Páramo</td></tr>
+          <tr><td>Sófocles</td><td>Edipo Rey</td></tr>
+          <tr><td>J.K. Rowling</td><td>Harry Potter</td></tr>
+          <tr><td>Virginia Woolf</td><td>Una habitación propia</td></tr>
+          <tr><td>Albert Camus</td><td>El extranjero</td></tr>
+          <tr><td>William Golding</td><td>El señor de las moscas</td></tr>
+          <tr><td>Esopo</td><td>Fábulas</td></tr>
+          <tr><td>Mario Vargas Llosa</td><td>La ciudad y los perros</td></tr>
+          <tr><td>Sor Juana Inés</td><td>Primero sueño</td></tr>
+          <tr><td>James Joyce</td><td>Ulises</td></tr>
+          <tr><td>Victor Hugo</td><td>Los miserables</td></tr>
+          <tr><td>Lope de Vega</td><td>Fuenteovejuna</td></tr>
+          <tr><td>André Breton</td><td>Manifiesto surrealista</td></tr>
+          <tr><td>Mary Shelley</td><td>Frankenstein</td></tr>
+
+          <tr><td>Franz Kafka</td><td>La metamorfosis</td></tr>
+          <tr><td>George Orwell</td><td>Rebelión en la granja / 1984</td></tr>
+          <tr><td>Bram Stoker</td><td>Drácula</td></tr>
+          <tr><td>J.R.R. Tolkien</td><td>El señor de los anillos</td></tr>
+          <tr><td>Goethe</td><td>Fausto / Las penas del joven Werther</td></tr>
+          <tr><td>Dostoievski</td><td>Crimen y castigo</td></tr>
+          <tr><td>Jane Austen</td><td>Orgullo y prejuicio</td></tr>
+          <tr><td>Cervantes</td><td>Don Quijote de la Mancha</td></tr>
+          <tr><td>Alejandro Dumas</td><td>El conde de Montecristo</td></tr>
+          <tr><td>Carlos Fuentes</td><td>Aura, La región más transparente</td></tr>
+          <tr><td>Edgar Allan Poe</td><td>Narraciones extraordinarias</td></tr>
+          <tr><td>Luis de Góngora</td><td>Soledades</td></tr>
+          <tr><td>Emile Zola</td><td>Naná, Germinal</td></tr>
+          <tr><td>Gabriel García Márquez</td><td>Cien años de soledad</td></tr>
+          <tr><td>Federico García Lorca</td><td>Bodas de sangre</td></tr>
+          <tr><td>Giovanni Boccaccio</td><td>El decameron</td></tr>
+          <tr><td>Octavio Paz</td><td>El laberinto de la soledad</td></tr>
+          <tr><td>Dante Alighieri</td><td>La Divina Comedia</td></tr>
+          <tr><td>Pedro Calderón de la Barca</td><td>La vida es sueño</td></tr>
+          <tr><td>Horacio Quiroga</td><td>Cuentos de amor de locura y muerte</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- 🟢  ETIMOLOGÍAS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section t-eti" id="eti">
+  <div class="sec-header" onclick="toggle(this)">
+    <span>🟢 Etimologías</span>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="sec-body">
+
+    <div class="sub t-eti">
+      <div class="sub-header" onclick="toggleSub(this)">🌍 Clasificación de lenguas <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <p><strong>Etimología</strong> = ciencia que estudia el origen, estructura y transformación de las palabras para desentrañar su verdadero significado.</p>
+        <div class="grid-2">
+          <div class="card t-eti"><strong>A) Morfológica</strong>Clasifica según estructura de palabras:<br><span class="badge t-eti">Monosilábicas</span> 1 sílaba<br><span class="badge t-eti">Aglutinantes</span> yuxtaposición<br><span class="badge t-eti">Flexivas</span> lexema + morfema</div>
+          <div class="card t-eti"><strong>B) Genealógica</strong>Clasifica por familia lingüística.<br>El español proviene de la familia: <strong>Indoeuropeo → Itálico → Latín → Español</strong></div>
+        </div>
+        <p class="note">El latín dio origen a las <strong>lenguas romances</strong>: español, francés, portugués, italiano, catalán.</p>
+      </div>
+    </div>
+
+
+    <div class="sub t-eti">
+      <div class="sub-header" onclick="toggleSub(this)">🏛️ Elementos del griego <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <p>El español tiene elementos griegos porque el latín tomó muchos del griego y el latín proviene el español.</p>
+        <p>El alfabeto griego proviene del <strong>fenicio</strong>. Tiene 24 letras: 17 consonantes y 7 vocales.</p>
+        <div class="grid">
+          <div class="card t-eti"><strong>Vocales breves</strong>Ómicron (E,ε → "e") · Épsilon (O,o → "o")</div>
+          <div class="card t-eti"><strong>Vocales largas</strong>Eta (H,η → "e larga") · Omega (Ω,ω → "o larga")</div>
+          <div class="card t-eti"><strong>Vocales indiferentes</strong>Alfa (A,α) · Iota (I,ι) · Ípsilon (Y,υ)</div>
+        </div>
+        <p><strong>Diptongos griegos:</strong> αι, ει, οι, αυ, ευ, ου, υι</p>
+        <h4>Acentos griegos</h4>
+        <p><span class="badge t-eti">Agudo (´)</span> elevación en tono de voz · <span class="badge t-eti">Grave (`)</span> supresión del agudo · <span class="badge t-eti">Circunflejo (^)</span> tono prolongado + depresión</p>
+        <h4>Clases por posición del acento</h4>
+        <p><span class="badge t-eti">Oxítonas</span> acento en última sílaba · <span class="badge t-eti">Paroxítonas</span> penúltima · <span class="badge t-eti">Proparoxítonas</span> antepenúltima</p>
+      </div>
+    </div>
+
+
+    <div class="sub t-eti">
+      <div class="sub-header" onclick="toggleSub(this)">🔧 Prefijos grecolatinos <span class="arr">▾</span></div>
+      <div class="sub-body open">
+        <div class="grid">
+          <div class="card t-eti"><strong>IN-, IM-</strong>negación<div class="ex">introvertido, inhumano, imposible</div></div>
+          <div class="card t-eti"><strong>NE-</strong>negación<div class="ex">negocio, negación</div></div>
+          <div class="card t-eti"><strong>DES-</strong>inversión, deshacer<div class="ex">desanimar, dislocar</div></div>
+          <div class="card t-eti"><strong>DIS-</strong>separación o negación<div class="ex">disgusto, disyuntiva</div></div>
+          <div class="card t-eti"><strong>EX-</strong>privación, fuera de<div class="ex">exánime, exorbitante</div></div>
+          <div class="card t-eti"><strong>ULTRA-</strong>más allá, ultramarino<div class="ex">ultramarino, ultratumba</div></div>
+          <div class="card t-eti"><strong>VICE-</strong>en lugar de<div class="ex">vicepresidente, vicealmirante</div></div>
+          <div class="card t-eti"><strong>EQUI-</strong>igual<div class="ex">equilátero, ecualizador</div></div>
+          <div class="card t-eti"><strong>OMNI-</strong>todos<div class="ex">omnívoro, omnisciente</div></div>
+          <div class="card t-eti"><strong>PRO-</strong>en lugar de, adelante<div class="ex">procónsul, pronombre</div></div>
+          <div class="card t-eti"><strong>PAN-</strong>todo<div class="ex">pangas, panteón</div></div>
+          <div class="card t-eti"><strong>ACRO-</strong>elevado<div class="ex">acróbata, acrópolis</div></div>
+          <div class="card t-eti"><strong>BRADI-</strong>lento<div class="ex">bradicardia</div></div>
+          <div class="card t-eti"><strong>MONO-</strong>uno<div class="ex">monociclo, monofocal</div></div>
+          <div class="card t-eti"><strong>POLI-</strong>muchos<div class="ex">polisemia, polifacético</div></div>
+          <div class="card t-eti"><strong>ANTI-</strong>en contra<div class="ex">anticomunista, antígeno</div></div>
+
+          <div class="card t-eti"><strong>AUTO-</strong>por uno mismo<div class="ex">autocontrol, autonomía</div></div>
+          <div class="card t-eti"><strong>HETERO-</strong>otro distinto<div class="ex">heterocromía, heterogéneo</div></div>
+          <div class="card t-eti"><strong>HOMO-</strong>del mismo tipo<div class="ex">homonimia, homólogo</div></div>
+          <div class="card t-eti"><strong>FOTO-</strong>luz<div class="ex">fotografía, fotosíntesis</div></div>
+          <div class="card t-eti"><strong>HELIO-</strong>sol<div class="ex">helioscopio, heliocéntrico</div></div>
+          <div class="card t-eti"><strong>INFRA-</strong>debajo<div class="ex">infrarrojo, infraestructura</div></div>
+          <div class="card t-eti"><strong>SUPRA-</strong>sobre<div class="ex">suprarrenal, supraocular</div></div>
+          <div class="card t-eti"><strong>AERO-</strong>aire<div class="ex">aerobio, aerífero</div></div>
+          <div class="card t-eti"><strong>AGRI-/AGRO-</strong>campo<div class="ex">agrónomo, agreste</div></div>
+          <div class="card t-eti"><strong>BENE-</strong>bien<div class="ex">benefactor, beneficencia</div></div>
+          <div class="card t-eti"><strong>ARCHI-/ARQUI-</strong>ser el primero<div class="ex">arcángel, archipiélago</div></div>
+          <div class="card t-eti"><strong>ANA-</strong>a través de, contra<div class="ex">anáfora, anaeróbico</div></div>
+          <div class="card t-eti"><strong>PER-</strong>a través de<div class="ex">perímetro, periferia</div></div>
+          <div class="card t-eti"><strong>CIRCUM-/CIRCUN-</strong>alrededor<div class="ex">circunferencia, circunspecto</div></div>
+          <div class="card t-eti"><strong>PRE-/POS-</strong>antes/después<div class="ex">prefacio, posfechado</div></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-eti">
+      <div class="sub-header" onclick="toggleSub(this)">🔩 Sufijos grecolatinos <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <div class="grid">
+          <div class="card t-eti"><strong>-BLE</strong>posibilidad, capacidad<div class="ex">visible, posible, creíble</div></div>
+          <div class="card t-eti"><strong>-BUNDO</strong>inclinación o aumento<div class="ex">nauseabundo, vagabundo</div></div>
+          <div class="card t-eti"><strong>-DAD / -EDAD</strong>cualidad abstracta<div class="ex">bondad, fidelidad</div></div>
+          <div class="card t-eti"><strong>-ÉRRIMO</strong>superlativo<div class="ex">paupérrimo, celebérrimo</div></div>
+          <div class="card t-eti"><strong>-ICO</strong>relativo a<div class="ex">bélico, tectónico, acústico</div></div>
+          <div class="card t-eti"><strong>-IDO/-ADO</strong>sufijos que originan adjetivos de pasado<div class="ex">nublado, perdido</div></div>
+          <div class="card t-eti"><strong>-ISMO</strong>sistema, religión o escuela<div class="ex">judaísmo, marxismo</div></div>
+          <div class="card t-eti"><strong>-ISTA</strong>profesión, oficio<div class="ex">dentista, baterista, tomista</div></div>
+          <div class="card t-eti"><strong>-ORIO</strong>lugar donde se realiza algo<div class="ex">crematorio, circulatorio</div></div>
+          <div class="card t-eti"><strong>-OSO</strong>abundancia<div class="ex">bochornoso, caluroso</div></div>
+          <div class="card t-eti"><strong>-FAGIA</strong>comer o tragar<div class="ex">antropofagia, onicofagia</div></div>
+          <div class="card t-eti"><strong>-FAGO</strong>que come o traga<div class="ex">fitófago, ictófago</div></div>
+          <div class="card t-eti"><strong>-GENESIA/-GENO</strong>origen, producción<div class="ex">eugenesia, patógeno</div></div>
+
+          <div class="card t-eti"><strong>-GRAFÍA</strong>escritura, descripción<div class="ex">geografía, demografía</div></div>
+          <div class="card t-eti"><strong>-LOGÍA</strong>tratado, estudio, ciencia<div class="ex">gerontología, edafología</div></div>
+          <div class="card t-eti"><strong>-MANÍA</strong>inclinación o impulso obsesivo<div class="ex">milomania, cleptomania</div></div>
+          <div class="card t-eti"><strong>-METRO/-IA</strong>medida<div class="ex">cronómetro, barónometro</div></div>
+          <div class="card t-eti"><strong>-NOMÍA</strong>ley, norma, regla<div class="ex">autonomía, astronomía</div></div>
+          <div class="card t-eti"><strong>-ITIS</strong>inflamación<div class="ex">meningitis, laringitis</div></div>
+          <div class="card t-eti"><strong>-ALGIA</strong>dolor<div class="ex">neuralgia, mialgia</div></div>
+          <div class="card t-eti"><strong>-ARQUÍA</strong>gobierno, poder<div class="ex">monarquía, oligarquía</div></div>
+          <div class="card t-eti"><strong>-CRACIA</strong>gobierno, poder<div class="ex">democracia, plutocracia</div></div>
+          <div class="card t-eti"><strong>-DROMO</strong>lugar para correr<div class="ex">hipódromo, autódromo</div></div>
+          <div class="card t-eti"><strong>-FOBIA</strong>miedo, aversión<div class="ex">agorafobia, posofobia</div></div>
+          <div class="card t-eti"><strong>-SCOPIO/-A</strong>ver, observar, examinar<div class="ex">otoscopio, desciloscopio</div></div>
+          <div class="card t-eti"><strong>-TECA</strong>estante, lugar para guardar<div class="ex">biblioteca, pinacoteca</div></div>
+          <div class="card t-eti"><strong>-LISIS</strong>disolución o destrucción<div class="ex">hidrólisis, hematólisis</div></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-eti">
+      <div class="sub-header" onclick="toggleSub(this)">🌎 Elementos no grecolatinos del español <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <div class="grid">
+          <div class="card t-eti"><strong>🏔️ Influencias preromanas (Celtas)</strong>/kt/ → ch · sufijos: -arro, -orro, -arro<div class="ex">pizarra, carro, barro</div></div>
+          <div class="card t-eti"><strong>⚔️ Influencia germánica</strong>Vándalos y visigodos (400). Ya muy romanizados.<div class="ex">ganso, ataúd, tregua, guerra</div></div>
+          <div class="card t-eti"><strong>🌙 Influencia árabe</strong>1200-1500. Aprox. 4000 arabismos. Segunda mayor influencia fonética. Sufijos: -í<div class="ex">ojalá, azul, zanahoria, jazmín</div></div>
+          <div class="card t-eti"><strong>🌺 Lenguas americanas (Maya, Náhuatl)</strong><div class="ex">aguacate, chocolate, elote, tequila, atole, chicle, mezcal, tamal, nopal</div></div>
+          <div class="card t-eti"><strong>🌿 Lenguas americanas (Taíno, Quechua)</strong><div class="ex">tapir, cóndor, alpaca, papa, llama, cacao, maíz</div></div>
+          <div class="card t-eti"><strong>🇫🇷 Influencia francesa</strong>Provenzalismo · Tránsito de peregrinos · Germanismos<div class="ex">español, mensaje, librero, gis</div></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="sub t-eti">
+      <div class="sub-header" onclick="toggleSub(this)">🆕 Neologismos <span class="arr">▾</span></div>
+      <div class="sub-body">
+        <p>Un <strong>neologismo</strong> es un vocablo, acepción o giro nuevo en una lengua. Se forma mediante:</p>
+        <div class="grid">
+          <div class="card t-eti"><strong>📦 Derivación</strong>Afijos + base léxica → nueva categoría gramatical.<div class="ex">rojo → rojizo</div></div>
+          <div class="card t-eti"><strong>🔗 Composición</strong>Unir 2+ raíces (vocablos con significado completo).<div class="ex">correcaminos, sacapunta, maleducado</div></div>
+          <div class="card t-eti"><strong>🎛️ Parasíntesis</strong>Palabra prefijada y sufijada al mismo tiempo sin variante intermedia.<div class="ex">a-cartón-ado</div></div>
+        </div>
+        <p class="note">💡 Los neologismos grecolatinos proceden del genitivo de la raíz. Frecuentemente necesitan vocal de enlace "o". Ej: Demo(s)+cracia → Democracia.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<p style="text-align:center;color:#9ca3af;font-size:12px;margin-top:24px;margin-bottom:8px">📚 Apunte de Español — Todos los derechos son tuyos ✨</p>
+
+<script>
+  // Toggle sección principal
+  function toggle(header) {
+    header.classList.toggle('open');
+    const body = header.nextElementSibling;
+    body.classList.toggle('open');
+  }
+
+  // Toggle sub-sección
+  function toggleSub(header) {
+    header.classList.toggle('open');
+    const body = header.nextElementSibling;
+    body.classList.toggle('open');
+  }
+
+  // Search
+  const searchInput = document.getElementById('search');
+  searchInput.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    if (!q) {
+      // Restaurar todo
+      document.querySelectorAll('mark').forEach(m => {
+        m.outerHTML = m.textContent;
+      });
+      return;
+    }
+    // Abrir todas las secciones con match
+    document.querySelectorAll('.section').forEach(sec => {
+      const txt = sec.textContent.toLowerCase();
+      if (txt.includes(q)) {
+        sec.querySelector('.sec-body').classList.add('open');
+        sec.querySelector('.sec-header').classList.add('open');
+        sec.querySelectorAll('.sub-body').forEach(sb => sb.classList.add('open'));
+        sec.querySelectorAll('.sub-header').forEach(sh => sh.classList.add('open'));
+      }
+    });
+  });
+</script>
+</body>
+</html>
